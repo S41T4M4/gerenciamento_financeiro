@@ -9,6 +9,7 @@ namespace AgendaFinanceira.Infraestrutura.Services
         public DbSet<Categorias> Categorias { get; set; }
         public DbSet<Transacoes> Transacoes { get; set; }
         public DbSet<MetasFinanceiras> MetasFinanceiras { get; set; }
+        public DbSet<Despesas> Despesas { get; set; }   
 
         public ConnectionContext(DbContextOptions<ConnectionContext> options)
           : base(options)

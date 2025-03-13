@@ -18,6 +18,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IContasRepository, ContasRepository>();
 builder.Services.AddTransient<ICategoriasRepository, CategoriaRepository>();
 builder.Services.AddTransient<ITransacoesRepository, TransacoesRepository>();
+builder.Services.AddTransient<IDespesasRepository, DespesasRepository>();
 builder.Services.AddHttpClient<CotacaoService>();
 
 builder.Services.AddTransient<IMetasFinanceirasRepository, MetasFinanceirasRepository>();

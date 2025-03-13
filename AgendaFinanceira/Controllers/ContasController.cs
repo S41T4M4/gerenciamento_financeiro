@@ -65,5 +65,18 @@ namespace AgendaFinanceira.Controllers
 
 
         }
+        [HttpPut("update_saldo/{id_conta}")]
+        public IActionResult UpdateStatusConta(int id_conta, ContaViewModel contasView)
+        {
+            var existingConta = _contasRepository.GetContaById(id_conta);
+            if (existingConta != null)
+            {
+                existingConta.saldo = contasView.Saldo;
+                _contasRepository.UpdateConta(existingConta);
+                return Ok();
+            }
+            return BadRequest();
+
+        }
     }
 }

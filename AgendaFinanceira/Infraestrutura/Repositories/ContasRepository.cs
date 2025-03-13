@@ -26,6 +26,18 @@ namespace AgendaFinanceira.Infraestrutura.Repositories
             _connectionContext.SaveChanges();
         }
 
+        public void UpdateSaldoConta(Contas conta)
+        {
+            var contaExisting = _connectionContext.Contas.Find(conta.id_conta);
+            if (contaExisting != null)
+            {
+                contaExisting.saldo = conta.saldo;
+                _connectionContext.Contas.Update(contaExisting);
+                _connectionContext.SaveChanges();
+            }
+
+        }
+
 
 
         public List<Contas> GetAllContas()
@@ -49,5 +61,6 @@ namespace AgendaFinanceira.Infraestrutura.Repositories
                 _connectionContext.SaveChanges();
             }
         }
+
     }
 }

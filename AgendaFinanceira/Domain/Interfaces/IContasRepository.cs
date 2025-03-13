@@ -6,6 +6,7 @@ namespace AgendaFinanceira.Domain.Interfaces
     {
         void AddNewConta(Contas contas);
         void UpdateConta(Contas contas);
+        void UpdateSaldoConta(Contas saldo);
         List<Contas> GetAllContas();
         Contas GetContaById(int id);
         void DeleteConta(int id);

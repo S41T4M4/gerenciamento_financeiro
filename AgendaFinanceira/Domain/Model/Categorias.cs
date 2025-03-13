@@ -8,7 +8,6 @@ namespace AgendaFinanceira.Domain.Model
     {
         [Key]
         public int id_categoria { get; set; }
-
         public string nome_categoria { get; set; }
     }
 }
