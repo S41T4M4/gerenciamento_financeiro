@@ -1,6 +1,0 @@
-@AgendaFinanceira_HostAddress = http://localhost:5069
-
-GET {{AgendaFinanceira_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
