@@ -9,7 +9,7 @@ namespace AgendaFinanceira.Domain.Model
         [Key]
         public int id_conta { get; set; }
         public string nome_conta { get; set; }
-        public int saldo { get; set; }
+        public decimal saldo { get; set; }
 
     }
 }

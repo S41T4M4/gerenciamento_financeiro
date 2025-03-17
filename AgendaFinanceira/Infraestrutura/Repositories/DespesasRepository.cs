@@ -35,17 +35,14 @@ namespace AgendaFinanceira.Infraestrutura.Repositories
             }
             
         }
-
-        
-
         public Despesas GetDespesasById(int id_despesas)
         {
             return _connectionContext.Despesas.Find(id_despesas);
         }
 
-        public Despesas GetDespesasRecorrentes(Despesas recorrentes)
+        public List<Despesas> GetDespesasRecorrentes(bool recorrente)
         {
-           return _connectionContext.Despesas.FirstOrDefault(d => d.recorrente == true);
+           return _connectionContext.Despesas.Where(d => d.recorrente == recorrente).ToList();
         }
 
         public void UpdateDespesas(int id_despesas, Despesas despesas)

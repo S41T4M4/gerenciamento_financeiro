@@ -20,7 +20,7 @@ namespace AgendaFinanceira.Controllers
         {
             Despesas despesas = new Despesas
             {
-               
+                id_conta = despesasViewModel.IdConta,
                 recorrente = despesasViewModel.Recorrente,
                 valor = despesasViewModel.Valor,
                 descricao = despesasViewModel.Descricao
@@ -35,6 +35,13 @@ namespace AgendaFinanceira.Controllers
         {
             var despesas = _despesasRepository.GetAllDespesas();
             return Ok(despesas);
+        }
+        [HttpGet("despesa_recorrente")]
+
+        public IActionResult GetDespesasRecorrentes(bool recorrente)
+        {
+            var despesasRecorrentes = _despesasRepository.GetDespesasRecorrentes(recorrente);
+            return Ok(despesasRecorrentes);
         }
     }
 }

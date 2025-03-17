@@ -9,6 +9,6 @@ namespace AgendaFinanceira.Domain.Interfaces
         Despesas GetDespesasById(int id_despesas);
         void DeleteDespesas(int id_despesas);
         void UpdateDespesas(int id_despesas, Despesas despesas);
-        Despesas GetDespesasRecorrentes(Despesas recorrentes);
+        List<Despesas> GetDespesasRecorrentes(bool recorrente);
     }
 }

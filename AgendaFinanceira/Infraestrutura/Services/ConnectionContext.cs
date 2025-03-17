@@ -15,6 +15,26 @@ namespace AgendaFinanceira.Infraestrutura.Services
           : base(options)
         {
         }
+
+        public override int SaveChanges()
+        {
+            var despesas = ChangeTracker.Entries<Despesas>()
+                .Where(e => e.State == EntityState.Added)
+                .Select(e => e.Entity)
+                .ToList();
+
+            foreach (var despesa in despesas)
+            {
+                var conta = Contas.Find(despesa.id_conta);
+
+                if (conta != null)
+                {
+                    conta.saldo -= despesa.valor; 
+                }
+            }
+
+            return base.SaveChanges();
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseNpgsql(
             "Server=localhost;" +

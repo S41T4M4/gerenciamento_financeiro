@@ -384,6 +384,22 @@
   },
   {
     "ContainingType": "AgendaFinanceira.Controllers.DespesasController",
+    "Method": "GetDespesasRecorrentes",
+    "RelativePath": "despesas/despesa_recorrente",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recorrente",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgendaFinanceira.Controllers.DespesasController",
     "Method": "AddNewDespesa",
     "RelativePath": "despesas/nova_despesa",
     "HttpMethod": "POST",
