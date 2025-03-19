@@ -23,7 +23,8 @@ namespace AgendaFinanceira.Controllers
                 id_conta = despesasViewModel.IdConta,
                 recorrente = despesasViewModel.Recorrente,
                 valor = despesasViewModel.Valor,
-                descricao = despesasViewModel.Descricao
+                descricao = despesasViewModel.Descricao,
+                id_categoria = despesasViewModel.IdCategoria,
 
 
             };
@@ -42,6 +43,21 @@ namespace AgendaFinanceira.Controllers
         {
             var despesasRecorrentes = _despesasRepository.GetDespesasRecorrentes(recorrente);
             return Ok(despesasRecorrentes);
+        }
+        [HttpGet("despesa_by_categoria/{id_categoria}")]
+
+        public IActionResult GetDespesasByCategoria(int id_categoria)
+        {
+            var despesaByCategoria = _despesasRepository.GetDespesasByCategoria(id_categoria);
+            return Ok(despesaByCategoria);
+        }
+
+        [HttpGet("categoria_most_used")]
+
+        public IActionResult GetCategoriaMostUsed()
+        {
+            var categoriaMaisUsada = _despesasRepository.GetCategoriasFrequentes();
+            return Ok(categoriaMaisUsada);
         }
     }
 }

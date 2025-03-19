@@ -9,11 +9,15 @@ namespace AgendaFinanceira.Domain.Model
         [Key]
 
         public int id_despesa { get; set; }
-
+        
         public bool recorrente { get; set; }
         public decimal valor { get; set; }
         public string descricao { get; set; }
 
+        [ForeignKey("Categoria")]
+        public int id_categoria { get; set; }
+
+        public virtual Categorias Categoria { get; set; }
 
 
         [ForeignKey("id_conta")]

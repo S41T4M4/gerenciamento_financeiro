@@ -13,5 +13,8 @@ namespace AgendaFinanceira.ViewModel
 
         [JsonPropertyName("id_conta")]
         public int IdConta { get; set; }
+
+        [JsonPropertyName("id_categoria")]
+        public int IdCategoria { get; set; }
     }
 }

@@ -1,7 +1,9 @@
-﻿using AgendaFinanceira.Domain.Interfaces;
+﻿using AgendaFinanceira.Domain.Dtos;
+using AgendaFinanceira.Domain.Interfaces;
 using AgendaFinanceira.Domain.Model;
 using AgendaFinanceira.Infraestrutura.Services;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 
 namespace AgendaFinanceira.Infraestrutura.Repositories
 {
@@ -21,7 +23,7 @@ namespace AgendaFinanceira.Infraestrutura.Repositories
         }
         public List<Despesas> GetAllDespesas()
         {
-            return _connectionContext.Despesas.ToList();
+            return _connectionContext.Despesas.Include(e => e.Categoria).ToList();
 
         }
 
@@ -49,6 +51,23 @@ namespace AgendaFinanceira.Infraestrutura.Repositories
         {
             _connectionContext.Despesas.Update(despesas);
             _connectionContext.SaveChanges();
+        }
+
+        public List<Despesas> GetDespesasByCategoria(int id_categoria)
+        {
+            return _connectionContext.Despesas.Include(e => e.Categoria).Where(e => e.id_categoria == id_categoria).ToList();
+        }
+
+        public List<CategoriaFrequenteDTO> GetCategoriasFrequentes()
+        {
+            return _connectionContext.Despesas.GroupBy(d => d.Categoria).Select(g => new CategoriaFrequenteDTO {
+                CategoriaNome = g.Key.nome_categoria,
+                Quantidade = g.Count()
+            })
+            .OrderByDescending(c => c.Quantidade)
+            .ToList();
+
+
         }
     }
 }

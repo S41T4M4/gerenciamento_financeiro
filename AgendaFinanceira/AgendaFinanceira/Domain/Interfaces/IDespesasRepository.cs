@@ -1,4 +1,5 @@
-﻿using AgendaFinanceira.Domain.Model;
+﻿using AgendaFinanceira.Domain.Dtos;
+using AgendaFinanceira.Domain.Model;
 
 namespace AgendaFinanceira.Domain.Interfaces
 {
@@ -10,5 +11,7 @@ namespace AgendaFinanceira.Domain.Interfaces
         void DeleteDespesas(int id_despesas);
         void UpdateDespesas(int id_despesas, Despesas despesas);
         List<Despesas> GetDespesasRecorrentes(bool recorrente);
+        List<Despesas> GetDespesasByCategoria(int id_categoria);
+        List<CategoriaFrequenteDTO> GetCategoriasFrequentes();  
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cIDLyLPIGNk=",
+  "dgSpecHash": "BpRZn3DNBBo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ibrai\\Documents\\Projects\\C#\\AgendaFinanceira\\AgendaFinanceira\\AgendaFinanceira.csproj",
+  "projectFilePath": "C:\\Users\\ibrai\\source\\repos\\AgendaFinanceira\\AgendaFinanceira\\AgendaFinanceira\\AgendaFinanceira.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ibrai\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.3\\microsoft.entityframeworkcore.9.0.3.nupkg.sha512",
     "C:\\Users\\ibrai\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.3\\microsoft.entityframeworkcore.abstractions.9.0.3.nupkg.sha512",

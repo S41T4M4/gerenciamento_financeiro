@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "lMjgt6qaP+K46QIwGIXQmSOYaq8FLk36bNIDaAYm+U0=",
+  "Hash": "Bqz14l9DEw932Xtkkm/rIDKD2hVEkRjd9mKeeJ44B3M=",
   "Source": "AgendaFinanceira",
   "BasePath": "_content/AgendaFinanceira",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }
