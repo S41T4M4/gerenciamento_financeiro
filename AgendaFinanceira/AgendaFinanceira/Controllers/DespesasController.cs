@@ -24,6 +24,7 @@ namespace AgendaFinanceira.Controllers
                 recorrente = despesasViewModel.Recorrente,
                 valor = despesasViewModel.Valor,
                 descricao = despesasViewModel.Descricao,
+                data_despesa = despesasViewModel.DataDespesa,
                 id_categoria = despesasViewModel.IdCategoria,
 
 

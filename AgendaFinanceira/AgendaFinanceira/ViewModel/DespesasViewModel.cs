@@ -10,6 +10,8 @@ namespace AgendaFinanceira.ViewModel
         public bool Recorrente { get; set; }
         public decimal Valor { get; set; }
         public string Descricao { get; set; }
+        [JsonPropertyName("data_despesa")]
+        public DateTime DataDespesa { get; set; }
 
         [JsonPropertyName("id_conta")]
         public int IdConta { get; set; }

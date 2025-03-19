@@ -839,6 +839,10 @@
             "type": "string",
             "nullable": true
           },
+          "data_despesa": {
+            "type": "string",
+            "format": "date-time"
+          },
           "id_conta": {
             "type": "integer",
             "format": "int32"

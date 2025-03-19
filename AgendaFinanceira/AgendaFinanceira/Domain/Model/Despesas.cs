@@ -13,6 +13,7 @@ namespace AgendaFinanceira.Domain.Model
         public bool recorrente { get; set; }
         public decimal valor { get; set; }
         public string descricao { get; set; }
+        public DateTime data_despesa { get; set; }
 
         [ForeignKey("Categoria")]
         public int id_categoria { get; set; }

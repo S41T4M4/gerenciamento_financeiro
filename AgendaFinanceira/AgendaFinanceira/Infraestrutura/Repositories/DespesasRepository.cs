@@ -4,6 +4,7 @@ using AgendaFinanceira.Domain.Model;
 using AgendaFinanceira.Infraestrutura.Services;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace AgendaFinanceira.Infraestrutura.Repositories
 {
@@ -67,6 +68,22 @@ namespace AgendaFinanceira.Infraestrutura.Repositories
             .OrderByDescending(c => c.Quantidade)
             .ToList();
 
+
+        }
+
+        public List<object> GetDespesasByMes()
+        {
+            var despesasPorMes = _connectionContext.Despesas
+              .GroupBy(d => new { d.data_despesa.Year, d.data_despesa.Month })
+              .Select(g => new
+              {
+                  Mes = new DateTime(g.Key.Year, g.Key.Month, 1).ToString("MMMM yyyy", new CultureInfo("pt-br")),
+                  TotalGasto = g.Sum(d => d.valor)
+              })
+              .OrderBy(d => d.Mes)
+              .ToList<object>();
+
+            return despesasPorMes;
 
         }
     }
