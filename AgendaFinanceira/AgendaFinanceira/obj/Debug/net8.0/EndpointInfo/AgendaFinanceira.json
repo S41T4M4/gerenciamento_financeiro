@@ -427,6 +427,18 @@
         }
       }
     },
+    "/api/despesas/despesas_by_month": {
+      "get": {
+        "tags": [
+          "Despesas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/metas_financeiras/new_meta_financeira": {
       "post": {
         "tags": [

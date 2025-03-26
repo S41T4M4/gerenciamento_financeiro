@@ -242,6 +242,16 @@
   },
   {
     "ContainingType": "AgendaFinanceira.Controllers.DespesasController",
+    "Method": "GetDespesasByMonth",
+    "RelativePath": "api/despesas/despesas_by_month",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgendaFinanceira.Controllers.DespesasController",
     "Method": "AddNewDespesa",
     "RelativePath": "api/despesas/nova_despesa",
     "HttpMethod": "POST",

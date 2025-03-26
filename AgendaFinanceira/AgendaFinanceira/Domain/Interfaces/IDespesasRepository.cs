@@ -13,6 +13,6 @@ namespace AgendaFinanceira.Domain.Interfaces
         List<Despesas> GetDespesasRecorrentes(bool recorrente);
         List<Despesas> GetDespesasByCategoria(int id_categoria);
         List<CategoriaFrequenteDTO> GetCategoriasFrequentes();
-        List<object> GetDespesasByMes();
+        List<DespesasPorMesDTO> GetDespesasByMes();
     }
 }

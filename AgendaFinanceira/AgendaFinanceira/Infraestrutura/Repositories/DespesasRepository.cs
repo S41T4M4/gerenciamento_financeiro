@@ -71,20 +71,33 @@ namespace AgendaFinanceira.Infraestrutura.Repositories
 
         }
 
-        public List<object> GetDespesasByMes()
+        public List<DespesasPorMesDTO> GetDespesasByMes()
         {
             var despesasPorMes = _connectionContext.Despesas
-              .GroupBy(d => new { d.data_despesa.Year, d.data_despesa.Month })
-              .Select(g => new
-              {
-                  Mes = new DateTime(g.Key.Year, g.Key.Month, 1).ToString("MMMM yyyy", new CultureInfo("pt-br")),
-                  TotalGasto = g.Sum(d => d.valor)
-              })
-              .OrderBy(d => d.Mes)
-              .ToList<object>();
+                .Include(d => d.Categoria)
+                .GroupBy(d => new { d.data_despesa.Year, d.data_despesa.Month })
+                .Select(g => new
+                {
+                    Year = g.Key.Year,
+                    Month = g.Key.Month,
+                    TotalGasto = g.Sum(d => d.valor),
+                   
+                })
+                .OrderBy(g => g.Year).ThenBy(g => g.Month)
+                .ToList();
 
-            return despesasPorMes;
+          
+            var result = despesasPorMes.Select(g => new DespesasPorMesDTO
+            {
+                Mes = new DateTime(g.Year, g.Month, 1).ToString("MMMM yyyy", new CultureInfo("pt-br")),
+                TotalGasto = g.TotalGasto,
+            
+                
+            }).ToList();
 
+            return result;
         }
+
+
     }
 }

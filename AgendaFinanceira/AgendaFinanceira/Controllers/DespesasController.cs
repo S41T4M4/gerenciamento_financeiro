@@ -35,9 +35,10 @@ namespace AgendaFinanceira.Controllers
         [HttpGet("todas_despesas")]
         public IActionResult GetAllDespesas()
         {
-            var despesas = _despesasRepository.GetAllDespesas();
+            var despesas = _despesasRepository.GetAllDespesas().Take(5);
             return Ok(despesas);
         }
+
         [HttpGet("despesa_recorrente")]
 
         public IActionResult GetDespesasRecorrentes(bool recorrente)
@@ -59,6 +60,13 @@ namespace AgendaFinanceira.Controllers
         {
             var categoriaMaisUsada = _despesasRepository.GetCategoriasFrequentes();
             return Ok(categoriaMaisUsada);
+        }
+
+        [HttpGet("despesas_by_month")]
+        public IActionResult GetDespesasByMonth()
+        {
+            var categoriaByMonth = _despesasRepository.GetDespesasByMes();
+            return Ok(categoriaByMonth);
         }
     }
 }
