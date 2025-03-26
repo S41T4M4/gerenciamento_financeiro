@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.dashboard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+.main {
+    background-color: rgb(0, 8, 36);
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.header__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+}
+
+.header__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: #ddd;
+    max-width: 600px;
+    margin: 10px auto 30px;
+}
+.header__subtitle span::before{
+    content:'Aqui você cuidara';
+    color: aquamarine ;
+    animation: words 20s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid color(srgb rgba(18, 136, 14, 0.658) green blue);
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: 'cuidar das suas finanças';
+    }
+    21%, 40%{
+        content: 'controlar seus gastos futuros';
+    }
+    41%, 60%{
+        content: 'verificar como anda o mundo financeiro';
+    }
+    61%, 80%{
+        content: 'planejar suas metas financeiras';
+    }
+    81%, 100%{
+        content: 'tornar o mundo financeiro leve';
+    }
+}
+
+
+.cotacao-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+
+.card {
+    width: 300px;
+    height: 420px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card__data {
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.card__description {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+.card__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.card__button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 15px;
+    background: #0bbeff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.card__button:hover {
+    background: #029eb6;
+}
+
+
+.card1 {
+    background-image: url("/assets/images/oppie.jpg");
+}
+
+.card2 {
+    background-image: url("/assets/images/obito.jpg");
+}
+
+.card3 {
+    background-image: url("/assets/images/bb.jpg");
+}
+
+
+@media (max-width: 768px) {
+    .cotacao-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+.transactions {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.transactions__title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+.transactions__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.transactions__header {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.transactions__header span {
+    flex: 1;
+    text-align: center;
+    color: white;
+}
+
+
+.transactions__body {
+    margin-top: 10px;
+}
+
+.transactions__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin-bottom: 8px;
+    transition: transform 0.2s ease;
+}
+
+.transactions__row:hover {
+    transform: scale(1.02);
+}
+
+
+.transactions__row span {
+    flex: 1;
+    text-align: center;
+    color: white;
+}
+
+
+.positive {
+    color: #0bbeff; 
+    font-weight: bold;
+}
+
+.negative {
+    color: #ff4d4d; 
+    font-weight: bold;
+}
+
+
+@media (max-width: 600px) {
+    .transactions__header, .transactions__row {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+}

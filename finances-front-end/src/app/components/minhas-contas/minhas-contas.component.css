@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.saldo-container {
+    background:  #1e1e1e;
+    min-height: 100vh;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+    
+    
+    
+}
+
+
+.saldo-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.my-accounts {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 16px; 
+    justify-content: center;
+}
+
+app-saldo-card {
+    max-width: 350px; 
+}
+
+
+
+
+
+
+.add-button {
+    margin-top: 20px;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff5722, #ff9800);
+    color: white;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.add-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+}
+
+
+.form-container {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out forwards;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+
+.form-container h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #1e1e1e;
+    color: white;
+    transition: border 0.3s;
+}
+
+input:focus, select:focus {
+    border: 2px solid #42a5f5;
+    outline: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+
+.add-button-receita {
+    padding: 14px 26px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px; 
+    cursor: pointer;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: white;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.add-button-receita:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+
+.add-button-despesa {
+    padding: 14px 26px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6d1818, #dc0a0a);
+    color: white;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.add-button-despesa:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+}
+
+
+
+.submit-button {
+    margin-top: 20px;
+    padding: 14px;
+    background: linear-gradient(135deg, #4caf50, #8bc34a);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    width: 100%;
+}
+
+.submit-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+
+input[type="checkbox"] {
+    width: auto;
+    margin-left: 10px;
+}
+
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 1024px) {
+    .account-card {
+        width: calc(50% - 20px);
+    }
+}
+
+
+@media (max-width: 767px) {
+    .account-card {
+        width: calc(100% - 20px); 
+    }
+}

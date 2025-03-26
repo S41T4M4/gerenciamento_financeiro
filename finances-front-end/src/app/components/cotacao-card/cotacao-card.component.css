@@ -1,0 +1,40 @@
+.cotacao-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+
+.cotacao-card {
+    display: flex;
+    align-items: center;
+    background: rgb(23, 29, 69);
+    color: white;
+    padding: 15px 25px;
+    width: 260px;
+    border-radius: 30px ;
+    
+    transition: transform 0.3s ease;
+}
+
+.cotacao-card:hover {
+    transform: scale(1.05);
+}
+
+.cotacao-card__icon {
+    font-size: 32px;
+    margin-right: 10px;
+}
+
+.cotacao-card__title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.cotacao-card__value {
+    font-size: 20px;
+    font-weight: 600;
+}

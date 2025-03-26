@@ -1,0 +1,72 @@
+<div class="metas-container">
+    <h2 class="titulo">Minhas Metas Financeiras</h2>
+  
+    <button class="add-meta-btn" (click)="showAddMetaModal = true">Adicionar Nova Meta</button>
+  
+    <div *ngIf="!showAddMetaModal">
+      <div *ngFor="let meta of metas; let i = index" class="meta-card animate" [style.animationDelay]="i * 0.2 + 's'">
+      
+       
+        <div class="meta-header">
+       
+  
+          <h3 class="meta-title">{{ meta.descricao }}</h3>
+        </div>
+  
+    
+        <div class="meta-body">
+        
+          <div class="meta-info">
+            <p><strong>📅 Prazo:</strong> {{ meta.prazo | date:'dd/MM/yyyy' }}</p>
+            <p><strong>💰 Valor:</strong> R$ {{ meta.valor_meta| number:'1.2-2' }}</p>
+          </div>
+  
+    
+          <div class="progress-container">  
+            
+            <h1 class="saldo"><p>Saldo Atual</p>R$ {{ saldo }}</h1>
+            <span class="progress-label">Progresso:</span>
+            
+            <div class="progress-bar">
+              <div class="progress-fill" [style.width.%]="(saldo / meta.valor_meta) * 100"></div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <div class="button-wrapper">
+          <button class="btn outline">DETALHES</button>
+          <button class="btn fill" (click)="removeMeta(meta.id_meta)">🗑</button>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="modal" *ngIf="showAddMetaModal">
+      <div class="modal-content">
+        <h2>Adicionar Nova Meta</h2>
+  
+        <div class="form-group">
+          <label for="descricao">Descrição:</label>
+          <input id="descricao" type="text" [(ngModel)]="tempMeta.descricao" placeholder="Ex: Comprar um carro">
+        </div>
+  
+        <div class="form-group">
+          <label for="valor">Valor da Meta:</label>
+          <input id="valor" type="number" [(ngModel)]="tempMeta.valor_meta" placeholder="Ex: 50000">
+        </div>
+        
+        <div class="form-group">
+          <label for="prazo">Prazo:</label>
+          <input id="prazo" type="date" [(ngModel)]="tempMeta.prazo">
+        </div>
+  
+        <div class="modal-buttons">
+          <button class="btn confirm" (click)="addNewMeta(); showAddMetaModal = false;">Adicionar</button>
+          <button class="btn cancel" (click)="showAddMetaModal = false">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  

@@ -1,0 +1,66 @@
+
+<div class="saldo-container">
+    <h2 class="saldo-title">Suas Contas</h2>
+    <div class="my-accounts">
+        <app-saldo-card *ngFor="let conta of contas" [conta]="conta"></app-saldo-card>
+    </div>
+
+
+    <div class="button-container" #showButtonReceita>
+        <button class="add-button-receita" (click)="toggleForm()"> 
+            {{ showForm ? 'Cancelar' : 'Adicionar Receita' }} 
+        </button>
+
+        <button class="add-button-despesa" (click)="toggleFormDespesa()">
+            {{ showFormDespesa ? 'Cancelar' : 'Adicionar Despesa' }}
+        </button>
+    </div>
+
+   
+    <div *ngIf="showForm" class="form-container">
+        <h3>Adicionar Receita</h3>
+        <form (ngSubmit)="addNewReceita()">
+            <label>Conta:</label>
+            <select [(ngModel)]="novaReceita.id_conta" name="conta" required>
+                <option *ngFor="let conta of contas" [value]="conta.id_conta">{{ conta.nome_conta }}</option>
+            </select>
+
+            <label>Valor:</label>
+            <input type="number" [(ngModel)]="novaReceita.valor" name="valor" required>
+
+            <label>Descrição:</label>
+            <input type="text" [(ngModel)]="novaReceita.descricao" name="descricao" required>
+
+            <label>Recorrente:</label>
+            <input type="checkbox" [(ngModel)]="novaReceita.recorrente" name="recorrente">
+
+            <button type="submit" class="submit-button">Salvar Receita</button>
+        </form>
+    </div>
+
+
+    <div *ngIf="showFormDespesa" class="form-container">
+        <h3>Adicionar Despesa</h3>
+        <form (ngSubmit)="addNewDespesa()">
+            <label>Conta:</label>
+            <select [(ngModel)]="novaDespesa.id_conta" name="conta" required>
+                <option *ngFor="let conta of contas" [value]="conta.id_conta">{{ conta.nome_conta }}</option>
+            </select>
+            <label>Categoria:</label>
+            <select [(ngModel)]="novaDespesa.id_categoria" name="categoria" required>
+                <option *ngFor="let categoria of categorias" [value]="categoria.id_categoria">{{ categoria.nome_categoria }}</option>
+            </select>
+            
+            <label>Valor:</label>
+            <input type="number" [(ngModel)]="novaDespesa.valor" name="valor" required>
+
+            <label>Descrição:</label>
+            <input type="text" [(ngModel)]="novaDespesa.descricao" name="descricao" required>
+
+            <label>Recorrente:</label>
+            <input type="checkbox" [(ngModel)]="novaDespesa.recorrente" name="recorrente">
+
+            <button type="submit" class="submit-button">Salvar Despesa</button>
+        </form>
+    </div>
+</div>
