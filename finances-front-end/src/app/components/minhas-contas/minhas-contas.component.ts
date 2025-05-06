@@ -9,12 +9,13 @@ import { CategoriaService } from '../../services/categoria.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SaldoCardComponent } from '../saldo-card/saldo-card.component';
+import { MenuComponent } from "../menu/menu.component";
 
 
 @Component({
   selector: 'app-minhas-contas',
   standalone: true,
-  imports: [FormsModule, CommonModule, SaldoCardComponent],
+  imports: [FormsModule, CommonModule, SaldoCardComponent, MenuComponent],
   templateUrl: './minhas-contas.component.html',
   styleUrl: './minhas-contas.component.css'
 })
@@ -96,7 +97,7 @@ export class MinhasContasComponent {
   addNewDespesa(): void {
     console.log("Enviando:", this.novaDespesa);
 
-    if (!this.novaDespesa.valor || !this.novaDespesa.descricao || !this.novaDespesa.id_conta || !this.novaDespesa.id_categoria) {
+    if (!this.novaDespesa.valor  || !this.novaDespesa.id_conta || !this.novaDespesa.id_categoria) {
       window.alert('Preencha todos os campos!');
       return;
     }

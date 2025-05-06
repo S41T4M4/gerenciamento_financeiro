@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ContasService } from '../../services/contas.service';
+import { Conta } from '../../models/contas-model';
 
 @Component({
   selector: 'app-menu',
@@ -18,4 +20,6 @@ export class MenuComponent {
   myMenuFunction() {
     console.log('Menu toggled');
   }
+
+
 }

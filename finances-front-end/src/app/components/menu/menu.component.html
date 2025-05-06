@@ -1,20 +1,7 @@
-<nav class="nav">
-  <div class="nav-logo">
-    <img src="/assets/logo.png" alt="">
-  </div>
-  <div class="nav-menu" id="navMenu">
-    <ul>
-      <li><a routerLink="" class="link active">Home</a></li>
-      <li><a routerLink="/minhas-contas" class="link">Minhas Contas</a></li>
-      <li><a routerLink="/metas-financeiras" class="link">Metas Financeiras</a></li>
-      <li><a routerLink="/cobrancas_recorrentes" class="link">Cobranças Recorrentes</a></li>
-    </ul>
-  </div>
-  <div class="nav-button" *ngIf="buttonsAppear">
-    <button class="btn-entrar" routerLink="/login">Entrar</button>
-    <button class="btn-cadastrar" routerLink="/cadastro">Cadastrar-se</button>
-  </div>
-  <div class="nav-menu-btn">
-    <i class="bx bx-menu" (click)="myMenuFunction()"></i>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a href="/" class="logo">
+      <i class="fa fa-home"></i> 
+    </a>
   </div>
 </nav>

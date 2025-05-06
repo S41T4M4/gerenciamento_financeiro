@@ -1,26 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #0d0d0d;
+
+
+.saldo-container {
+    background-image: url("/assets/images/hacker.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
 }
 
 
-.saldo-container {
-    background:  #1e1e1e;
-    min-height: 100vh;
-    padding: 80px 20px;
-    text-align: center;
-    color: #fff;
-    
-    
-    
-}
-
-
 .saldo-title {
+    color: white;
+    margin-top: 80px;
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 30px;
@@ -31,7 +30,7 @@ body {
 .my-accounts {
     display: flex;
     flex-wrap: wrap; 
-    gap: 16px; 
+    gap: 20px; 
     justify-content: center;
 }
 
@@ -42,34 +41,14 @@ app-saldo-card {
 
 
 
-
-
-.add-button {
-    margin-top: 20px;
-    padding: 14px 24px;
-    font-size: 18px;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background: linear-gradient(135deg, #ff5722, #ff9800);
-    color: white;
-    transition: transform 0.2s, box-shadow 0.3s;
-}
-
-.add-button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
-}
-
-
 .form-container {
     margin-top: 30px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(97, 227, 231, 0.1);
     padding: 25px;
+    gap: 15px;
+    color: rgb(236, 236, 236);
+    border: 5px solid black;
     border-radius: 12px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.5s ease-in-out forwards;
     max-width: 420px;
     margin-left: auto;
@@ -99,15 +78,16 @@ input, select {
 }
 
 input:focus, select:focus {
-    border: 2px solid #42a5f5;
+    border: 2px solid #c43e26;
     outline: none;
 }
 
 .button-container {
+    margin-top: 20px;
     display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
     justify-content: center;
-    gap: 40px;
-    margin-top: 30px;
 }
 
 
@@ -118,15 +98,13 @@ input:focus, select:focus {
     border: none;
     border-radius: 50px; 
     cursor: pointer;
-    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    background-color: transparent;
+    border: 3px solid #039108;
     color: white;
-    transition: transform 0.2s, box-shadow 0.3s;
+
 }
 
-.add-button-receita:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
-}
+
 
 
 .add-button-despesa {
@@ -136,39 +114,37 @@ input:focus, select:focus {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    background: linear-gradient(135deg, #6d1818, #dc0a0a);
+    background:transparent;
+    border: 3px solid #a10303;
     color: white;
-    transition: transform 0.2s, box-shadow 0.3s;
+
 }
 
-.add-button-despesa:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
-}
+
 
 
 
 .submit-button {
     margin-top: 20px;
     padding: 14px;
-    background: linear-gradient(135deg, #4caf50, #8bc34a);
-    color: white;
-    border: none;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: 3px solid green;
     border-radius: 8px;
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.3s;
     width: 100%;
 }
-
 .submit-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+    
+    color: rgb(21, 214, 15);
+    
 }
 
 
 input[type="checkbox"] {
+    
     width: auto;
     margin-left: 10px;
 }

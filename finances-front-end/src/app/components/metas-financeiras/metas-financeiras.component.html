@@ -1,39 +1,39 @@
+<app-menu></app-menu>
 <div class="metas-container">
     <h2 class="titulo">Minhas Metas Financeiras</h2>
   
-    <button class="add-meta-btn" (click)="showAddMetaModal = true">Adicionar Nova Meta</button>
+    <button class="add-meta-btn" (click)="toggleAddMetaModal()">Adicionar Nova Meta</button>
   
-    <div *ngIf="!showAddMetaModal">
+    <div >
       <div *ngFor="let meta of metas; let i = index" class="meta-card animate" [style.animationDelay]="i * 0.2 + 's'">
       
        
         <div class="meta-header">
-       
-  
           <h3 class="meta-title">{{ meta.descricao }}</h3>
         </div>
-  
+      
     
+        <div class="meta-valor">
+          <p>🎯 Valor Almejado</p>
+          <h1>R$ {{ meta.valor_meta | number:'1.2-2' }}</h1>
+        </div>
+      
         <div class="meta-body">
-        
           <div class="meta-info">
             <p><strong>📅 Prazo:</strong> {{ meta.prazo | date:'dd/MM/yyyy' }}</p>
-            <p><strong>💰 Valor:</strong> R$ {{ meta.valor_meta| number:'1.2-2' }}</p>
+           
           </div>
-  
-    
-          <div class="progress-container">  
-            
-            <h1 class="saldo"><p>Saldo Atual</p>R$ {{ saldo }}</h1>
+      
+          <div class="progress-container">
             <span class="progress-label">Progresso:</span>
-            
+        
             <div class="progress-bar">
-              <div class="progress-fill" [style.width.%]="(saldo / meta.valor_meta) * 100"></div>
+                <div class="progress-fill" [style.width.%]="(saldo / meta.valor_meta) * 100"></div>
+               
+              
             </div>
-          </div>
         </div>
-  
-  
+        
         <div class="button-wrapper">
           <button class="btn outline">DETALHES</button>
           <button class="btn fill" (click)="removeMeta(meta.id_meta)">🗑</button>

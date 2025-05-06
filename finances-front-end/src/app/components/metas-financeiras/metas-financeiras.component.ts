@@ -5,11 +5,12 @@ import { MetasFinanceiras } from '../../models/metas-financeiras-model';
 import { MetasService } from '../../services/metas.service';
 import { ContasService } from '../../services/contas.service';
 import { Conta } from '../../models/contas-model';
+import { MenuComponent } from "../menu/menu.component";
 
 @Component({
   selector: 'app-metas-financeiras',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule, MenuComponent],
   templateUrl: './metas-financeiras.component.html',
   styleUrl: './metas-financeiras.component.css'
 })
@@ -18,6 +19,7 @@ export class MetasFinanceirasComponent {
   contas: Conta[] = [];
   metas: MetasFinanceiras[] = [];
   modalAberto: boolean = false;
+
   
   tempMeta: MetasFinanceiras = {
       id_meta: 0,
@@ -27,8 +29,10 @@ export class MetasFinanceirasComponent {
       prazo: new Date()
   }
   toggleAddMetaModal() {
+    
     this.showAddMetaModal = !this.showAddMetaModal;
   }
+
   constructor(private metasService: MetasService, private contasService: ContasService){}
   
   saldo: number = 0;
@@ -52,24 +56,10 @@ export class MetasFinanceirasComponent {
       });
   }
   
-  setUrgency(metas : MetasFinanceiras):string{
-      const dataHoje = new Date();
-      const dataMeta = new Date(metas.prazo);
-      const dias_faltantes = Math.floor((dataMeta.getTime() - dataHoje.getTime()) / (1000 * 60 * 60 * 24));
-  
-      if(dias_faltantes <= 30){
-        return "Urgente";
-      }
-      if(dias_faltantes <= 90){
-        return "Alta";
-      }
-      if(dias_faltantes <= 180){
-        return "Média";
-      }
-      return "Baixa";
-  }
+
   
   removeMeta(id_meta: number):void {
+
       this.metasService.removeMeta(id_meta).subscribe(() => {
           this.metas = this.metas.filter(m => m.id_meta !== id_meta);
       });

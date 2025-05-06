@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&display=swap');
+
+:host {
+  display: block;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.home-container {
+  background-image: url('/assets/images/1354305.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  color: white;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-text {
+  max-width: 600px;
+
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-out;
+  }
+
+  p {
+  font-size: 1rem; 
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  margin-bottom: 20px;
+  border-right: 3px solid #fff; 
+  width: 0;
+  animation: typing 6s steps(40) infinite, 
+             blinkCaret 0.75s step-end infinite; 
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    button {
+      background: #00ffd0;
+      color: #000;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        background: #00bfa6;
+      }
+    }
+  }
+}
+
+.card-section {
+  background: #f5f5f5;
+  color: #222;
+  padding: 2rem;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      min-width: 200px;
+      transition: transform 0.3s ease;
+
+      h3 {
+        font-family: 'Orbitron', sans-serif;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+
+.animate-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: enter 1s ease-out forwards;
+}
+
+.animate-in-late {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: enter 1s 0.5s ease-out forwards;
+}
+.glow-btn {
+    position: relative;
+    
+  font-family: 'Chakra Petch', sans-serif; 
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  
+    .tooltip {
+      position: absolute;
+      bottom: -2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffffee;
+      color: #111;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-family: 'Chakra Petch', sans-serif;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transform-origin: bottom center;
+      scale: 0.95;
+      transition: opacity 0.3s ease, scale 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+  
+    &:hover .tooltip {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  
+
+@keyframes enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+.section-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .account-card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease both;
+  }
+  
+  .account-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .saldo-label {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .saldo-valor {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #29f27f;
+  }
+  .cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .actions {
+    position: relative;
+  }
+  
+
+.saldo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    animation: fadeInModal 0.5s forwards;
+  }
+  
+  .saldo-modal .modal-content {
+    background: transparent;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 40%;
+    max-width: 400px;
+    animation: modalZoom 0.4s ease-out;
+  }
+  
+  .saldo-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .saldo-modal .close-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+  }
+  .saldo-footer {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .saldo-footer .details-link {
+    font-size: 0.9rem;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+    color: #f9b234;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #f9b234;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .saldo-footer .details-link:hover {
+    background-color: #f9b234;
+    color: #2c2c2c;
+  }
+  
+  
+  .saldo-modal h2 {
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  .saldo-card {
+    background: linear-gradient(135deg, #1e1e1e, #474747);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    padding: 16px;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(249, 178, 52, 0.04);
+    backdrop-filter: blur(4px);
+    margin-bottom: 10px;
+  }
+  
+  .saldo-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .saldo-header .icon {
+    font-size: 1.3rem;
+    color: #f9b234;
+  }
+  
+  .nome-conta {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  .saldo-body .label {
+    font-size: 0.8rem;
+    color: #ccc;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+  }
+  
+  .saldo-body .valor {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f9b234;
+    text-shadow: 0 0 6px rgba(249, 178, 52, 0.2);
+  }
+  
+  /* Animação de fade-in para o modal */
+  @keyframes fadeInModal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+ 
+  @keyframes modalZoom {
+    from {
+      transform: scale(0.8);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    } to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+
+  @keyframes blinkCaret {
+    50% {
+      border-color: transparent;
+    }
+  }

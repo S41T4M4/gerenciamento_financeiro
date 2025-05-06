@@ -1,22 +1,10 @@
-<div class="ag-format-container">
-    <div class="ag-courses_box">
-      <div class="ag-courses_item">
-        <a  class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
-  
-          <div class="ag-courses-item_title">
-            {{conta.nome_conta}}
-          </div>
-  
-          <div class="ag-courses-item_date-box">
-            Saldo disponível:
-            <span class="ag-courses-item_date">
-              {{conta.saldo }}
-            </span>
-          </div>
-        </a>
-      </div>
-  
-    </div>
+<div class="saldo-card">
+  <div class="saldo-header">
+    <i class="fas fa-wallet icon"></i>
+    <span class="nome-conta">{{ conta.nome_conta }}</span>
   </div>
-  
+  <div class="saldo-body">
+    <span class="label">Saldo disponível</span>
+    <span class="valor">{{ conta.saldo | currency:'BRL' }}</span>
+  </div>
+</div>

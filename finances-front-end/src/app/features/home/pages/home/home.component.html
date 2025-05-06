@@ -1,0 +1,47 @@
+
+<div class="home-container">
+    <div class="overlay">
+      <div class="hero-text animate-in">
+        <h1>Domine sua vida financeira</h1>
+        <p>Conquiste metas. Elimine dívidas. Transforme o amanhã.</p>
+  
+        <div class="actions" *ngIf=!isSaldoModalVisible>
+          <button class="glow-btn" routerLink="/metas-financeiras">
+            <span><i class="fas fa-chart-line"></i> Minhas Metas</span>
+            <div class="tooltip"><i class="fas fa-chart-line"></i> Veja sua jornada financeira em tempo real</div>
+          </button>
+  
+          <button class="glow-btn secondary" (click)="showSaldoModal()">
+            <span><i class="fas fa-wallet"></i> Minhas Contas</span>
+            <div class="tooltip"><i class="fas fa-wallet"></i> Defina seu caminho até a liberdade</div>
+          </button>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div *ngIf="isSaldoModalVisible" class="saldo-modal" (click)="hideSaldoModal()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close-btn" (click)="hideSaldoModal()">×</span>
+          
+        </div>
+        <div class="modal-body">
+          <div class="saldo-card" *ngFor="let conta of contas">
+            <div class="saldo-header">
+              <i class="fas fa-wallet icon"></i>
+              <span class="nome-conta">{{ conta.nome_conta }}</span>
+            </div>
+            <div class="saldo-body">
+              <span class="label">Saldo disponível</span>
+              <span class="valor">{{ conta.saldo | currency:'BRL' }}</span>
+            </div>
+            <div class="saldo-footer">
+                <a routerLink="minhas-contas" class="details-link">Details</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
